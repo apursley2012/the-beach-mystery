@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  +----------------------------------------------------------------------------+
+  | The Beach Mystery | Search-index metadata                                  |
+  | Purpose: Lists canonical public routes for search-engine discovery of the  |
+  |          static website.                                                   |
+  | Author: Alysha Pursley                                                     |
+  | Copyright (c) 2026 Alysha Pursley.                                         |
+  | SPDX-License-Identifier: MIT                                               |
+  +----------------------------------------------------------------------------+
+-->
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://apursley2012.github.io/the-beach-mystery/</loc>
+    </url>
+    <url>
+        <loc>
+            https://apursley2012.github.io/the-beach-mystery/pages/play.html
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://apursley2012.github.io/the-beach-mystery/pages/endings.html
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://apursley2012.github.io/the-beach-mystery/pages/gallery.html
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://apursley2012.github.io/the-beach-mystery/pages/about.html
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://apursley2012.github.io/the-beach-mystery/pages/case-study.html
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://apursley2012.github.io/the-beach-mystery/pages/blog.html
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://apursley2012.github.io/the-beach-mystery/pages/privacy.html
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://apursley2012.github.io/the-beach-mystery/pages/terms.html
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://apursley2012.github.io/the-beach-mystery/pages/accessibility.html
+        </loc>
+    </url>
+</urlset>

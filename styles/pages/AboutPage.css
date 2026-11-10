@@ -1,0 +1,197 @@
+/*
+  +----------------------------------------------------------------------------+
+  | The Beach Mystery | Page-specific styles                                   |
+  | Purpose: Contains only presentation rules unique to the About route; shared |
+  |          design-system rules remain in shared.css.                         |
+  | Author: Alysha Pursley                                                     |
+  | Copyright (c) 2026 Alysha Pursley.                                         |
+  | SPDX-License-Identifier: MIT                                               |
+  +----------------------------------------------------------------------------+
+*/
+
+/* Page header and introductory content */
+
+.about-page {
+    padding: 3rem 0 2rem;
+    background: var(--bg);
+}
+
+.about-page__header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.about-page__badge {
+    background: #0ea5e914;
+    border: 1px solid #0ea5e933;
+    color: var(--sky-800);
+}
+
+.about-page__title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    background: linear-gradient(135deg, var(--coral-700), var(--coral-800));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: #00000000;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.about-page__tagline {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.about-page__hero {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-page__section {
+    margin-bottom: 3rem;
+}
+
+/* Long-form overview and feature sections for the About route. */
+
+.about-page__section-title {
+    font-size: 1.75rem;
+    color: var(--ocean-800);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.about-page__prose {
+    max-width: var(--reading-width);
+    margin: 0 auto;
+}
+
+.about-page__prose p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+}
+
+.about-page__feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.about-feature {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--neutral-200);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.about-feature:hover {
+    transform: translateY(-2px);
+    border-color: var(--coral-200);
+    box-shadow: var(--shadow-md);
+}
+
+.about-feature__icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.about-feature h3 {
+    font-size: 1.1rem;
+    color: var(--accent-deep);
+    margin-bottom: 0.4rem;
+}
+
+.about-feature p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.about-page__tech {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-page__tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.about-page__tech-item {
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    background: var(--sky-50);
+    border: 1px solid var(--sky-200);
+    color: var(--sky-900);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.about-page__tech-note {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.about-page__story {
+    margin-bottom: 3rem;
+}
+
+.about-page__story-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-page__story-stat {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--neutral-200);
+    box-shadow: var(--shadow-sm);
+}
+
+.about-page__story-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--ocean-700);
+    margin-bottom: 0.25rem;
+}
+
+.about-page__story-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.about-page__cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}

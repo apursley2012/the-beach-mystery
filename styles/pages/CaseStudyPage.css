@@ -1,0 +1,173 @@
+/*
+  +----------------------------------------------------------------------------+
+  | The Beach Mystery | Page-specific styles                                   |
+  | Purpose: Contains only presentation rules unique to the Case Study route,  |
+  |          including diagrams and code-example treatment.                    |
+  | Author: Alysha Pursley                                                     |
+  | Copyright (c) 2026 Alysha Pursley.                                         |
+  | SPDX-License-Identifier: MIT                                               |
+  +----------------------------------------------------------------------------+
+*/
+
+/* Case-study shell and article header */
+
+.case-study {
+    padding: 3rem 0 2rem;
+    background: var(--bg);
+}
+
+.case-study__header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.case-study__badge {
+    background: #e25a3c14;
+    border: 1px solid #e25a3c33;
+    color: var(--accent-deep);
+}
+
+.case-study__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--text-bright);
+    margin-bottom: 0.5rem;
+}
+
+.case-study__meta {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+/* Long-form reading layout */
+
+.case-study__article {
+    max-width: var(--reading-width);
+    margin: 0 auto;
+}
+
+.case-study__section {
+    margin-bottom: 2.5rem;
+}
+
+.case-study__section-title {
+    font-size: 1.5rem;
+    color: var(--ocean-800);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--coral-300);
+}
+
+.case-study__section p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.case-study__section code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    padding: 0.15rem 0.4rem;
+    border-radius: var(--radius-sm);
+    background: #e25a3c14;
+    color: var(--accent-deep);
+}
+
+/* Lightweight architecture diagram */
+
+/* Code example presentation */
+
+/* Architecture diagrams, code samples, enhancement details, and the closing CTA. */
+
+.case-study__diagram {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem 1rem;
+    margin: 1.5rem 0;
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--neutral-200);
+    box-shadow: var(--shadow-sm);
+}
+
+.case-study__diagram-node {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    background: #0ea5e90f;
+    border: 1px solid #0ea5e933;
+    color: var(--sky-800);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.case-study__diagram-node--choice {
+    background: #e25a3c14;
+    border-color: #e25a3c40;
+    color: var(--accent-deep);
+}
+
+.case-study__diagram-arrow {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.case-study__diagram-branch {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.case-study__code {
+    margin: 1.5rem 0;
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+    background: var(--neutral-900);
+    border: 1px solid var(--neutral-800);
+    overflow-x: auto;
+}
+
+.case-study__code pre {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--neutral-100);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.case-study__enhancement-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.case-study__enhancement-list li {
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    border: 1px solid var(--neutral-200);
+    border-left: 4px solid var(--ocean-300);
+    box-shadow: var(--shadow-sm);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.case-study__enhancement-list strong {
+    color: var(--accent-deep);
+}
+
+.case-study__cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    border-top: 1px solid var(--neutral-200);
+    margin-top: 2rem;
+}

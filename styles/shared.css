@@ -1,0 +1,959 @@
+/*
+  +----------------------------------------------------------------------------+
+  | The Beach Mystery | Shared styles and design tokens                        |
+  | Purpose: Owns reusable tokens, base/reset rules, typography, controls,     |
+  |          shared layout, navigation/footer styling, artwork presentation,   |
+  |          animation, and accessibility helpers used by multiple routes.     |
+  | Author: Alysha Pursley                                                     |
+  | Copyright (c) 2026 Alysha Pursley.                                         |
+  | SPDX-License-Identifier: MIT                                               |
+  +----------------------------------------------------------------------------+
+*/
+
+/*
+ * Reusable buttons
+ * Base button styles are shared because the same controls appear on multiple routes.
+ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: var(--interactive-transition);
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn--primary {
+    background: linear-gradient(135deg, var(--coral-700), var(--coral-800));
+    color: var(--neutral-0);
+    box-shadow: 0 4px 20px #e25a3c40;
+}
+
+.btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px #e25a3c59;
+    color: var(--neutral-0);
+}
+
+.btn--primary:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #00000000, #ffffff4c, #00000000);
+    transition: left 0.5s;
+}
+
+.btn--primary:hover:before {
+    left: 100%;
+}
+
+.btn--ghost {
+    background: #ffffff1a;
+    color: var(--neutral-50);
+    border: 1px solid #ffffff4c;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.btn--ghost:hover {
+    background: #fff3;
+    border-color: #ffffff80;
+    color: var(--neutral-0);
+}
+
+.btn--light {
+    background: var(--neutral-100);
+    color: var(--neutral-800);
+    border: 1px solid var(--neutral-300);
+}
+
+.btn--light:hover {
+    background: var(--neutral-200);
+    color: var(--neutral-900);
+    border-color: var(--neutral-400);
+}
+
+.btn--lg {
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+}
+
+.btn__arrow {
+    transition: transform var(--transition);
+}
+
+.btn--primary:hover .btn__arrow {
+    transform: translate(4px);
+}
+
+/*
+ * Design tokens
+ * Centralizes reusable brand colors, typography, radii, shadows, and timing.
+ */
+
+:root {
+    --sky-50: #e5f5fd;
+    --sky-100: #bae5f9;
+    --sky-200: #8fd5f5;
+    --sky-300: #64c5f1;
+    --sky-400: #39b5ed;
+    --sky-500: #0ea5e9;
+    --sky-600: #0c8ec8;
+    --sky-700: #0a77a8;
+    --sky-800: #085f87;
+    --sky-900: #064867;
+    --sky-950: #043146;
+    --ocean-50: #dcf0f4;
+    --ocean-100: #b0d9e0;
+    --ocean-200: #84c1cd;
+    --ocean-300: #59aab9;
+    --ocean-400: #2d92a6;
+    --ocean-500: #017b92;
+    --ocean-600: #016c80;
+    --ocean-700: #015d6f;
+    --ocean-800: #014f5d;
+    --ocean-900: #01404c;
+    --ocean-950: #01313a;
+    --sand-50: #fef9f5;
+    --sand-100: #fdefe4;
+    --sand-200: #fbe4d3;
+    --sand-300: #fadac1;
+    --sand-400: #f8cfb0;
+    --sand-500: #f7c59f;
+    --sand-600: #d4a989;
+    --sand-700: #b28e72;
+    --sand-800: #8f725c;
+    --sand-900: #6d5745;
+    --sand-950: #4a3b2f;
+    --coral-50: #fef2f1;
+    --coral-100: #fddcd9;
+    --coral-200: #fcc6c1;
+    --coral-300: #faafa9;
+    --coral-400: #f99991;
+    --coral-500: #f88379;
+    --coral-600: #d57168;
+    --coral-700: #b25f57;
+    --coral-800: #904c46;
+    --coral-900: #6d3a35;
+    --coral-950: #4a2824;
+    --teal-50: #dcf4f2;
+    --teal-100: #b0e1dc;
+    --teal-200: #85cdc7;
+    --teal-300: #59bab1;
+    --teal-400: #2ea69c;
+    --teal-500: #029386;
+    --teal-600: #027e73;
+    --teal-700: #016a61;
+    --teal-800: #01554e;
+    --teal-900: #00413c;
+    --teal-950: #002c29;
+    --success-400: #4ade80;
+    --success-500: #22c55e;
+    --success-600: #15803d;
+    --warning-400: #fbbf24;
+    --warning-500: #f59e0b;
+    --error-400: #f87171;
+    --error-500: #ef4444;
+    --neutral-0: #ffffff;
+    --neutral-50: #fafafa;
+    --neutral-100: #f5f5f5;
+    --neutral-200: #e5e5e5;
+    --neutral-300: #d4d4d4;
+    --neutral-400: #a3a3a3;
+    --neutral-500: #737373;
+    --neutral-600: #525252;
+    --neutral-700: #404040;
+    --neutral-800: #262626;
+    --neutral-900: #171717;
+    --neutral-950: #0a0a0a;
+    --bg: var(--neutral-50);
+    --bg-elevated: var(--neutral-0);
+    --bg-card: var(--neutral-0);
+    --bg-dark: var(--neutral-900);
+    --text: var(--neutral-800);
+    --text-muted: var(--neutral-600);
+    --text-bright: var(--neutral-900);
+    --text-on-dark: var(--neutral-50);
+    --text-muted-on-dark: var(--neutral-300);
+    --accent: var(--coral-600);
+    --accent-bright: var(--coral-700);
+    --accent-deep: var(--coral-800);
+    --primary: var(--sky-500);
+    --primary-bright: var(--sky-400);
+    --highlight: var(--sand-400);
+    --highlight-deep: var(--sand-600);
+    --gold: #ffd700;
+    --honey-gold-500: #ffc30b;
+    --gold-500-soft: #ffc30b80;
+    --amber-500: #ffbf00;
+    --amber-500-soft: #ffbf0080;
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Outfit", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --shadow-sm: 0 2px 8px #25201a0f;
+    --shadow-md: 0 8px 24px #25201a1a;
+    --shadow-lg: 0 20px 60px #25201a26;
+    --shadow-glow: 0 0 40px #e25a3c1f;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --interactive-transition:
+        transform var(--transition), opacity var(--transition),
+        color var(--transition), background-color var(--transition),
+        border-color var(--transition), box-shadow var(--transition),
+        filter var(--transition);
+    --max-width: 1200px;
+    --reading-width: 680px;
+}
+
+/* Global reset and element defaults */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--accent-deep);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--accent-bright);
+}
+
+button {
+    min-width: 24px;
+    min-height: 24px;
+    font-family: var(--font-body);
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+input,
+textarea {
+    font-family: var(--font-body);
+}
+
+::selection {
+    background: var(--coral-300);
+    color: var(--neutral-900);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--neutral-300);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--sand-400);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes float {
+    0%,
+    to {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes wave {
+    0%,
+    to {
+        transform: translate(0) translateY(0);
+    }
+    50% {
+        transform: translate(-15px) translateY(-4px);
+    }
+}
+
+@keyframes pulse-glow {
+    0%,
+    to {
+        box-shadow: 0 0 20px #e25a3c14;
+    }
+    50% {
+        box-shadow: 0 0 40px #e25a3c33;
+    }
+}
+
+@keyframes drift {
+    0% {
+        transform: translate(0);
+    }
+    to {
+        transform: translate(-50%);
+    }
+}
+
+@keyframes spin-slow {
+    0% {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes typewriter {
+    0% {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes ken-burns {
+    0% {
+        transform: scale(1) translate(0);
+    }
+    to {
+        transform: scale(1.08) translate(-1%, -1%);
+    }
+}
+
+/*
+ * Animation utility classes
+ * Motion-sensitive users are handled by the reduced-motion media query below.
+ */
+
+.animate-fade-up {
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-fade {
+    animation: fadeIn 0.5s ease-out both;
+}
+
+.animate-scale {
+    animation: scaleIn 0.4s ease-out both;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.delay-4 {
+    animation-delay: 0.4s;
+}
+
+/* Small layout and text utilities used by multiple pages. */
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/*
+ * Shared content-page header treatments
+ * These styles are intentionally identical across the informational pages;
+ * each page retains ownership of its palette and unique heading details.
+ */
+
+:is(
+    .about-page__badge,
+    .blog-page__badge,
+    .gallery-page__badge,
+    .endings-page__badge,
+    .case-study__badge
+) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+:is(.blog-page__title, .gallery-page__title, .endings-page__title) {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    color: var(--ocean-800);
+    margin-bottom: 0.75rem;
+}
+
+:is(.blog-page__subtitle, .gallery-page__subtitle, .endings-page__subtitle) {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/*
+ * Scene artwork
+ * Shared by Home, Play, Gallery, About, and Endings.
+ */
+
+.scene-art {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--neutral-200);
+}
+
+.scene-art__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    animation: ken-burns 20s ease-out infinite alternate;
+}
+
+.scene-art__fallback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--sky-200), var(--sand-200));
+    font-size: 3rem;
+}
+
+.scene-art__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.scene-art__overlay--beach {
+    background: linear-gradient(180deg, #00000000 40%, #00000026 100%);
+}
+
+.scene-art__overlay--chest,
+.scene-art__overlay--chest-open {
+    background: linear-gradient(180deg, #00000000 30%, #6b402840 100%);
+}
+
+.scene-art__overlay--beach-walk,
+.scene-art__overlay--beach-sunset {
+    background: linear-gradient(180deg, #00000000 40%, #25201a33 100%);
+}
+
+.scene-art__overlay--map {
+    background: linear-gradient(135deg, #6b402833, #25201a4d);
+}
+
+.scene-art__overlay--island,
+.scene-art__overlay--island-path {
+    background: linear-gradient(180deg, #00000000 40%, #0c4a6e33 100%);
+}
+
+.scene-art__overlay--riddle {
+    background: linear-gradient(135deg, #25201a66, #0c4a6e4d);
+}
+
+.scene-art__overlay--cave-entrance,
+.scene-art__overlay--cave-interior,
+.scene-art__overlay--cave-fork {
+    background: linear-gradient(180deg, #25201a4d, #25201a80);
+}
+
+.scene-art__overlay--treasure-chamber {
+    background: linear-gradient(180deg, #e0a96826, #6b40284d);
+}
+
+.scene-art__overlay--animal-den {
+    background: linear-gradient(180deg, #0f766e33, #25201a4d);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *:before,
+    *:after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .scene-art__img {
+        animation: none;
+    }
+}
+
+/*
+ * Visually hidden accessibility text
+ * Keeps labels available to assistive technology without changing visual layout.
+ */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/*
+ * Skip navigation
+ * Keeps the keyboard shortcut off-screen until it receives focus.
+ */
+
+.skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 1000;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    background: var(--neutral-900);
+    color: var(--neutral-0);
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/*
+ * Keyboard focus
+ * A consistent focus ring keeps shared interactive controls visible during keyboard use.
+ */
+
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/*
+ * Navigation
+ * Shared application chrome used across every route.
+ */
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--sky-900);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border-bottom: 2.5px solid var(--sky-200);
+}
+
+.nav__inner {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.nav__brand {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--neutral-0);
+    text-decoration: none;
+    white-space: nowrap;
+}
+.nav__brand-title {
+    font-weight: 700;
+    line-height: 1;
+}
+
+.nav__brand-icon {
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+    flex-shrink: 0;
+    object-fit: contain;
+    animation: float 4s ease-in-out infinite;
+}
+
+.nav__brand-title-line {
+    display: block;
+    color: var(--neutral-0);
+}
+
+.nav__brand-title-line--accent {
+    background: linear-gradient(
+        135deg,
+        var(--sand-200),
+        var(--coral-300),
+        var(--sand-300)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: #00000000;
+    font-style: italic;
+}
+
+.nav__links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    color: var(--neutral-0);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition:
+        color var(--transition),
+        background-color var(--transition);
+    position: relative;
+}
+
+.nav__link:hover {
+    color: var(--neutral-0);
+    background: var(--sky-800);
+}
+
+.nav__link--active {
+    color: var(--neutral-0);
+    background: var(--sky-800);
+}
+
+.nav__link--active:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 20px;
+    height: 2px;
+    background: var(--coral-300);
+    border-radius: 1px;
+}
+
+.nav__toggle {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    gap: 4px;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav__toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--neutral-0);
+    border-radius: 1px;
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
+}
+
+.nav__toggle--open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav__toggle--open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav__toggle--open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 900px) {
+    .nav__toggle {
+        display: flex;
+    }
+    .nav__links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem 1rem 1rem;
+        max-height: calc(100dvh - 4rem);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        background: var(--sky-900);
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--sky-800);
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+            transform var(--transition),
+            opacity var(--transition),
+            visibility 0s linear var(--transition);
+    }
+    .nav__links--open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition-delay: 0s;
+    }
+    .nav__link {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+    .nav__link--active:after {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav__brand {
+        font-size: 1.125rem;
+    }
+
+    .nav__brand-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+/* Keep the full brand and menu usable at high text zoom / very narrow widths. */
+@media (max-width: 319px) {
+    .nav__inner {
+        padding-inline: 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .nav__brand {
+        gap: 0.25rem;
+        font-size: 1rem;
+    }
+
+    .nav__brand-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+/*
+ * Footer
+ * Shared application chrome used across every route.
+ */
+
+.footer {
+    margin-top: 4rem;
+    padding: 2.5rem 0 2rem;
+    border-top: 1px solid var(--sky-800);
+    background: var(--sky-900);
+}
+
+.footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.footer__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    color: var(--neutral-0);
+}
+
+.footer__icon {
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+    flex-shrink: 0;
+    object-fit: contain;
+    animation: float 4s ease-in-out infinite;
+}
+
+.footer__tagline {
+    color: var(--sky-100);
+    font-size: 0.875rem;
+}
+
+.footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+}
+
+.footer__links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--neutral-0);
+    font-size: 0.875rem;
+    transition: color var(--transition);
+}
+
+.footer__links a:hover {
+    color: var(--coral-200);
+}
+
+.footer__copy {
+    color: var(--sky-100);
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .footer__brand {
+        font-size: 1.25rem;
+    }
+
+    .footer__icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+/*
+ * No-script fallback
+ * Gives visitors a useful explanation instead of a blank page when JavaScript is disabled.
+ */
+
+.noscript-message {
+    max-width: 42rem;
+    margin: 5rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+/*
+ * Mobile target sizing
+ * Keeps touch targets comfortably sized on small screens without enlarging desktop controls.
+ */
+
+@media (max-width: 900px) {
+    button,
+    .btn,
+    .nav__link {
+        min-height: 44px;
+    }
+}

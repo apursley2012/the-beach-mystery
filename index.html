@@ -1,28 +1,120 @@
 <!DOCTYPE html>
+<!--
+  +----------------------------------------------------------------------------+
+  | The Beach Mystery | Root HTML entry                                        |
+  | Purpose: Provides the repository-root home entry while the complete page   |
+  |          set lives under pages/ and shared UI remains componentized in js/. |
+  | Author: Alysha Pursley                                                     |
+  | Copyright (c) 2026 Alysha Pursley.                                         |
+  | SPDX-License-Identifier: MIT                                               |
+  +----------------------------------------------------------------------------+
+-->
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Beach Mystery — An Interactive Adventure</title>
-    <meta name="description" content="A choose-your-own-adventure story where every choice shapes your beach journey." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="./assets/main.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/index.js">
-    <link rel="modulepreload" crossorigin href="./assets/jsx-runtime.js">
-    <link rel="modulepreload" crossorigin href="./assets/index2.js">
-    <link rel="modulepreload" crossorigin href="./components/Nav.js">
-    <link rel="modulepreload" crossorigin href="./data/sceneImages.js">
-    <link rel="modulepreload" crossorigin href="./components/SceneArt.js">
-    <link rel="modulepreload" crossorigin href="./data/story.js">
-    <link rel="modulepreload" crossorigin href="./hooks/useGameState.js">
-    <link rel="modulepreload" crossorigin href="./components/Footer.js">
-    <link rel="stylesheet" crossorigin href="./assets/Nav.css">
-    <link rel="stylesheet" crossorigin href="./assets/Footer.css">
-    <link rel="stylesheet" crossorigin href="./assets/main.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="author"
+            content="Alysha Pursley" />
+        <meta
+            name="theme-color"
+            content="#faf9f7" />
+        <meta
+            name="referrer"
+            content="strict-origin-when-cross-origin" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'" />
+        <meta
+            name="description"
+            content="Play The Beach Mystery, an illustrated choose-your-own-adventure with personalized story paths, hidden treasure, a riddle, seven routes, and four endings." />
+        <title>The Beach Mystery — An Interactive Adventure</title>
+        <meta
+            property="og:type"
+            content="website" />
+        <meta
+            property="og:title"
+            content="The Beach Mystery — An Interactive Adventure" />
+        <meta
+            property="og:description"
+            content="Play an illustrated choose-your-own-adventure with personalized story paths, hidden treasure, a riddle, seven routes, and four endings." />
+        <meta
+            property="og:url"
+            content="https://apursley2012.github.io/the-beach-mystery/" />
+        <meta
+            property="og:image"
+            content="https://apursley2012.github.io/the-beach-mystery/assets/icons/social-preview.png" />
+        <meta
+            property="og:image:width"
+            content="1200" />
+        <meta
+            property="og:image:height"
+            content="630" />
+        <meta
+            name="twitter:card"
+            content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="The Beach Mystery — An Interactive Adventure" />
+        <meta
+            name="twitter:description"
+            content="Play an illustrated choose-your-own-adventure with personalized story paths, hidden treasure, a riddle, seven routes, and four endings." />
+        <meta
+            name="twitter:image"
+            content="https://apursley2012.github.io/the-beach-mystery/assets/icons/social-preview.png" />
+        <link
+            rel="canonical"
+            href="https://apursley2012.github.io/the-beach-mystery/" />
+
+        <link
+            rel="icon"
+            href="./favicon.ico"
+            sizes="any" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/icons/icon-32.png" />
+        <link
+            rel="apple-touch-icon"
+            href="./assets/icons/icon-180.png" />
+        <link
+            rel="manifest"
+            href="./manifest.webmanifest" />
+
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com" />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+            rel="stylesheet" />
+
+        <!-- Shared styles must load before route-specific styles. -->
+        <link
+            rel="stylesheet"
+            href="./styles/shared.css" />
+        <link
+            rel="stylesheet"
+            href="./styles/pages/HomePage.css" />
+
+        <script
+            type="module"
+            src="./js/main.js"></script>
+    </head>
+    <body data-route="/">
+        <div id="root"></div>
+        <noscript>
+            <main class="noscript-message">
+                <h1>The Beach Mystery</h1>
+                <p>This interactive story requires JavaScript to play.</p>
+            </main>
+        </noscript>
+    </body>
 </html>

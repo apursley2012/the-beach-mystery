@@ -1,0 +1,239 @@
+/*
+  +----------------------------------------------------------------------------+
+  | The Beach Mystery | Page-specific styles                                   |
+  | Purpose: Contains only presentation rules unique to ending progress, cards, |
+  |          and route- specific layout.                                       |
+  | Author: Alysha Pursley                                                     |
+  | Copyright (c) 2026 Alysha Pursley.                                         |
+  | SPDX-License-Identifier: MIT                                               |
+  +----------------------------------------------------------------------------+
+*/
+
+/* Page header and discovery summary */
+
+.endings-page {
+    padding: 3rem 0 2rem;
+    background: var(--bg);
+}
+
+.endings-page__header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.endings-page__badge {
+    background: #e25a3c14;
+    border: 1px solid #e25a3c33;
+    color: var(--accent-deep);
+}
+
+.endings-page__badge-icon {
+    font-size: 1.1rem;
+}
+
+.endings-page__subtitle {
+    max-width: 500px;
+}
+
+/* Responsive ending-card collection */
+
+.endings-page__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Individual ending states: discovered and locked */
+
+.ending-card {
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--neutral-200);
+    overflow: hidden;
+    transition: var(--interactive-transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.ending-card--discovered:hover {
+    transform: translateY(-4px);
+    border-color: var(--coral-200);
+    box-shadow: var(--shadow-lg);
+}
+
+.ending-card--locked .ending-card__art {
+    opacity: 0.65;
+}
+
+.ending-card__art {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+}
+
+.ending-card__lock-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #faf9f7cc;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.ending-card__lock-overlay span {
+    font-size: 2.5rem;
+}
+
+.ending-card__content {
+    padding: 1.5rem;
+}
+
+.ending-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.ending-card__icon {
+    font-size: 1.5rem;
+}
+
+.ending-card__status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+}
+
+.ending-card--discovered .ending-card__status {
+    background: #22c55e1a;
+    color: var(--success-600);
+}
+
+.ending-card--locked .ending-card__status {
+    background: var(--neutral-100);
+    color: var(--text-muted);
+}
+
+.ending-card__title {
+    font-size: 1.4rem;
+    color: var(--text-bright);
+    margin-bottom: 0.5rem;
+}
+
+.ending-card__desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.ending-card__paths {
+    padding-top: 1rem;
+    border-top: 2px solid var(--coral-200);
+}
+
+.ending-card__paths-title {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+.ending-card__path-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ending-card__path-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.ending-card__path-name {
+    font-size: 0.85rem;
+    color: var(--accent-deep);
+    font-weight: 500;
+}
+
+.ending-card__path-steps {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.endings-page__cta {
+    text-align: center;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    background: #e25a3c0a;
+    border: 1px solid #e25a3c1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.endings-page__cta p {
+    color: var(--text);
+    font-size: 1.05rem;
+}
+
+/* Ending-discovery progress ring and summary layout. */
+
+.endings-page__progress {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.endings-page__progress-ring {
+    position: relative;
+    width: 140px;
+    height: 140px;
+}
+
+.endings-page__progress-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.endings-page__progress-circle {
+    transition: stroke-dasharray 1s ease-out;
+}
+
+.endings-page__progress-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.endings-page__progress-num {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--ocean-700);
+}
+
+.endings-page__progress-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}

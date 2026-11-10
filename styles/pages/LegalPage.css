@@ -1,0 +1,72 @@
+/*
+  +----------------------------------------------------------------------------+
+  | The Beach Mystery | Page-specific styles                                   |
+  | Purpose: Defines shared layout and typography for Privacy, Terms, and      |
+  |          Accessibility pages.                                              |
+  | Author: Alysha Pursley                                                     |
+  | Copyright (c) 2026 Alysha Pursley.                                         |
+  | SPDX-License-Identifier: MIT                                               |
+  +----------------------------------------------------------------------------+
+*/
+
+.legal-page {
+    min-height: 70vh;
+    padding: 4rem 0;
+}
+
+.legal-page__inner {
+    max-width: 54rem;
+}
+
+.legal-page__header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.legal-page__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-deep);
+    font-weight: 600;
+}
+
+.legal-page__title {
+    margin-bottom: 0.75rem;
+    color: var(--text-bright);
+    font-size: clamp(2.25rem, 7vw, 4rem);
+}
+
+.legal-page__subtitle,
+.legal-page__content p {
+    color: var(--text-muted);
+}
+
+.legal-page__content {
+    display: grid;
+    gap: 1rem;
+    padding: clamp(1.25rem, 4vw, 2.25rem);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-sm);
+}
+
+.legal-page__content h2 {
+    margin-top: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--coral-300);
+    color: var(--ocean-800);
+    font-size: 1.5rem;
+}
+
+/* Make the two legal-document links easy to activate on small touch screens. */
+@media (max-width: 900px) {
+    .legal-page__content a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        vertical-align: middle;
+    }
+}

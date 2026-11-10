@@ -1,0 +1,115 @@
+/*
+  +----------------------------------------------------------------------------+
+  | The Beach Mystery | Page-specific styles                                   |
+  | Purpose: Gives host-level and in-app 404 routes a polished, accessible,    |
+  |          responsive coastal presentation.                                  |
+  | Author: Alysha Pursley                                                     |
+  | Copyright (c) 2026 Alysha Pursley.                                         |
+  | SPDX-License-Identifier: MIT                                               |
+  +----------------------------------------------------------------------------+
+*/
+
+.not-found {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    min-height: min(75vh, 47rem);
+    padding: clamp(3rem, 8vw, 6rem) 1.25rem;
+    overflow: hidden;
+    background: linear-gradient(
+        180deg,
+        var(--sky-50),
+        var(--ocean-50) 67%,
+        var(--sand-100)
+    );
+}
+
+.not-found::before,
+.not-found::after {
+    position: absolute;
+    right: -10%;
+    bottom: -6.5rem;
+    left: -10%;
+    z-index: -1;
+    height: clamp(8rem, 22vw, 15rem);
+    border-radius: 50% 50% 0 0;
+    content: "";
+    pointer-events: none;
+}
+
+.not-found::before {
+    bottom: -4rem;
+    background: var(--ocean-200);
+    transform: rotate(-3deg);
+}
+
+.not-found::after {
+    bottom: -8rem;
+    background: var(--ocean-400);
+    transform: rotate(3deg);
+}
+
+.not-found__inner {
+    width: min(100%, 42rem);
+    padding: clamp(1.75rem, 6vw, 3.5rem);
+    border: 1px solid var(--ocean-200);
+    border-radius: var(--radius-xl);
+    background: var(--neutral-0);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.not-found__icon {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--ocean-600);
+    font-size: clamp(2rem, 7vw, 3rem);
+}
+
+.not-found__code {
+    margin-bottom: 0.25rem;
+    color: var(--ocean-700);
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 16vw, 8rem);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.not-found__title {
+    margin-bottom: 0.75rem;
+    color: var(--ocean-900);
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    overflow-wrap: anywhere;
+}
+
+.not-found__text {
+    max-width: 34rem;
+    margin: 0 auto 1.75rem;
+    color: var(--text-muted);
+    font-size: clamp(1rem, 2.6vw, 1.1rem);
+}
+
+.not-found .btn {
+    justify-content: center;
+    max-width: 100%;
+    min-height: 44px;
+    white-space: normal;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .not-found {
+        min-height: 70vh;
+        padding-inline: 1rem;
+    }
+
+    .not-found__inner {
+        padding: 1.75rem 1.25rem;
+    }
+}
+
+/* Let the coastal 404 background meet the shared footer without a blank strip. */
+body[data-route="*"] .footer {
+    margin-top: 0;
+}

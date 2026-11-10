@@ -1,0 +1,13 @@
+# +----------------------------------------------------------------------------+
+# | The Beach Mystery | Crawler instructions                                   |
+# | Purpose: Allows public pages to be indexed and identifies the canonical    |
+# |          sitemap for the deployed site.                                    |
+# | Author: Alysha Pursley                                                     |
+# | Copyright (c) 2026 Alysha Pursley.                                         |
+# | SPDX-License-Identifier: MIT                                               |
+# +----------------------------------------------------------------------------+
+
+User-agent: *
+Allow: /
+
+Sitemap: https://apursley2012.github.io/the-beach-mystery/sitemap.xml

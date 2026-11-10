@@ -1,0 +1,28 @@
+{
+    "name": "The Beach Mystery",
+    "short_name": "Beach Mystery",
+    "description": "An interactive choose-your-own-adventure beach mystery.",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#faf9f7",
+    "theme_color": "#faf9f7",
+    "icons": [
+        {
+            "src": "./assets/icons/icon-180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "./assets/icons/icon-512-maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
