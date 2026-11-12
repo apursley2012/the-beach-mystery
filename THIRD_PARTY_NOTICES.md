@@ -20,12 +20,11 @@ The distributed React DOM bundle also contains React Scheduler code, covered by 
 
 #### React, React DOM, React JSX Runtime
 
-*Copyright ©️ Meta Platforms, Inc. (formerly Facebook, Inc.) and its affiliates.*
+*Copyright © Meta Platforms, Inc. (formerly Facebook, Inc.) and its affiliates.*
 
 This source code is licensed under the MIT license.
 
 This license is copied below, and is also available at: [MIT LICENSE](https://opensource.org/license/mit)
-
 
 ----------------------------------------------------------------------
 
@@ -33,7 +32,7 @@ This license is copied below, and is also available at: [MIT LICENSE](https://op
 
 ----------------------------------------------------------------------
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
+Permission is hereby granted,free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -92,24 +91,23 @@ Google Fonts supplies the font files at runtime. The individual font licenses li
 
 ### Externally Loaded Fonts Copyright Notice
 
-*Copyright ©️ 2015 the Cormorant Project Authors [Cormorant Garamond](github.com/CatharsisFonts/Cormorant), with Reserved Font Name* ***Cormorant Garamond***. 
+*Copyright © 2015 the Cormorant Project Authors [Cormorant Garamond](https://github.com/CatharsisFonts/Cormorant), with Reserved Font Name* ***Cormorant Garamond***.
 
-*Copyright ©️ 2021 The Outfit Project Authors [Outfit](https://github.com/Outfitio/Outfit-Fonts), with Reserved Font Name* ***Outfit***.
+*Copyright © 2021 The Outfit Project Authors [Outfit](https://github.com/Outfitio/Outfit-Fonts), with Reserved Font Name* ***Outfit***.
 
-*Copyright 2020 The JetBrains Mono Project Authors [JetBrains Monon](https://github.com/JetBrains/JetBrainsMono)*, with Reserved Font Name ***JetBrains Mono***. 
-&nbsp;
+*Copyright © 2020 The JetBrains Mono Project Authors [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono), with Reserved Font Name* ***JetBrains Mono***.
 
-The above Fonts’ Software is licensed under the SIL Open Font License, Version 1.1.  
+The above fonts’ software is licensed under the SIL Open Font License, Version 1.1.
 
-This license is copied below, and is also available with a FAQ at:  
-[SIL Open Font License](https://openfontlicense.org)
+This license is copied below, and is also available with a FAQ at: [SIL Open Font License](https://openfontlicense.org)
 
 ----------------------------------------------------------------------
-### SIL OPEN FONT LICENSE Version 1.1 - 26 Februar 2007
-----------------------------------------------------------------------
-#### PREAMBLE
+
+### SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+
 ----------------------------------------------------------------------
 
+PREAMBLE
 The goals of the Open Font License (OFL) are to stimulate worldwide
 development of collaborative font projects, to support the font creation
 efforts of academic and linguistic communities, and to provide a free and
@@ -125,10 +123,7 @@ however, cannot be released under any other type of license. The
 requirement for fonts to remain under this license does not apply
 to any document created using the fonts or their derivatives.
 
-----------------------------------------------------------------------
-#### DEFINITIONS
-----------------------------------------------------------------------
-
+DEFINITIONS
 "Font Software" refers to the set of files released by the Copyright
 Holder(s) under this license and clearly marked as such. This may
 include source files, build scripts and documentation.
@@ -136,21 +131,18 @@ include source files, build scripts and documentation.
 "Reserved Font Name" refers to any names specified as such after the
 copyright statement(s).
 
-"Original Version" refers to the collection of Font Software components as
-distributed by the Copyright Holder(s).
+"Original Version" refers to the collection of Font Software components
+as distributed by the Copyright Holder(s).
 
 "Modified Version" refers to any derivative made by adding to, deleting,
 or substituting -- in part or in whole -- any of the components of the
-Original Version, by changing formats or by porting the Font Software to a
-new environment.
+Original Version, by changing formats or by porting the Font Software
+to a new environment.
 
 "Author" refers to any designer, engineer, programmer, technical
 writer or other person who contributed to the Font Software.
 
-----------------------------------------------------------------------
-#### PERMISSION & CONDITIONS
-----------------------------------------------------------------------
-
+PERMISSION & CONDITIONS
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of the Font Software, to use, study, copy, merge, embed, modify,
 redistribute, and sell modified and unmodified copies of the Font
@@ -168,8 +160,8 @@ binary files as long as those fields can be easily viewed by the user.
 
 3) No Modified Version of the Font Software may use the Reserved Font
 Name(s) unless explicit written permission is granted by the corresponding
-Copyright Holder. This restriction only applies to the primary font name as
-presented to the users.
+Copyright Holder. This restriction only applies to the primary font name
+as presented to the users.
 
 4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
 Software shall not be used to promote, endorse or advertise any
@@ -183,25 +175,17 @@ distributed under any other license. The requirement for fonts to
 remain under this license does not apply to any document created
 using the Font Software.
 
-----------------------------------------------------------------------
-#### TERMINATION
-----------------------------------------------------------------------
-
+TERMINATION
 This license becomes null and void if any of the above conditions are
 not met.
 
-
-----------------------------------------------------------------------
-#### DISCLAIMER
-----------------------------------------------------------------------
-
+DISCLAIMER
 THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
 OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
 COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
-OTHER DEALINGS IN THE FONT SOFTWARE.
-
+DAMAGES, OR ANY OTHER DAMAGES WHATSOEVER, WHETHER IN AN ACTION OF
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY
+TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
