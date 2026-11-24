@@ -12,7 +12,7 @@ Date: August 2026
 
 <div align="center">
 
-<img src="./assets/icons/icon-512.png" alt="The Beach Mystery Logo" width="75%" height=“auto”>
+<img src="./assets/icons/icon-512.png" alt="The Beach Mystery Logo" width="512px" height=“auto”>
 
 <h1>The Beach Mystery 🏝️</h1>
 
